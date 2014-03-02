@@ -12,7 +12,7 @@ Mojolicious::Plugin::PageNavigator - Page Navigator plugin for Mojolicious
 
 # DESCRIPTION
 
-[Mojolicious::Plugin::PageNavigator](http://search.cpan.org/perldoc?Mojolicious::Plugin::PageNavigator) generates standard page navigation bar, like 
+[Mojolicious::Plugin::BootstrapPagination](http://search.cpan.org/perldoc?Mojolicious::Plugin::BootstrapPagination) generates standard page navigation bar, like 
   
 
 <<  1  2 ... 11 12 13 14 15 ... 85 86 >>

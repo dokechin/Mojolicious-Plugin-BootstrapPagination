@@ -6,7 +6,7 @@ use Mojo::ByteStream 'b';
 use strict;
 use warnings;
 
-our $VERSION = "0.01";
+our $VERSION = "0.02";
 
 # Homer: Well basically, I just copied the plant we have now.
 #        Then, I added some fins to lower wind resistance.  
@@ -84,7 +84,7 @@ Mojolicious::Plugin::PageNavigator - Page Navigator plugin for Mojolicious
 
 =head1 DESCRIPTION
 
-L<Mojolicious::Plugin::PageNavigator> generates standard page navigation bar, like 
+L<Mojolicious::Plugin::BootstrapPagination> generates standard page navigation bar, like 
   
 <<  1  2 ... 11 12 13 14 15 ... 85 86 >>
 
