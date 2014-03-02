@@ -6,7 +6,7 @@ use Mojo::ByteStream 'b';
 use strict;
 use warnings;
 
-our $VERSION = "0.02";
+our $VERSION = "0.03";
 
 # Homer: Well basically, I just copied the plant we have now.
 #        Then, I added some fins to lower wind resistance.  
@@ -16,7 +16,7 @@ sub  register{
   my ( $self, $app, $args ) = @_;
   $args ||= {};
 
-  $app->helper( bootstrap_nagination => sub{
+  $app->helper( bootstrap_pagination => sub{
       my ( $self, $actual, $count, $opts ) = @_;
       $count = ceil($count);
       return "" unless $count > 1;
