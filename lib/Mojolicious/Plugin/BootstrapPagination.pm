@@ -6,7 +6,7 @@ use Mojo::ByteStream 'b';
 use strict;
 use warnings;
 
-our $VERSION = "0.04";
+our $VERSION = "0.05";
 
 # Homer: Well basically, I just copied the plant we have now.
 #        Then, I added some fins to lower wind resistance.  
