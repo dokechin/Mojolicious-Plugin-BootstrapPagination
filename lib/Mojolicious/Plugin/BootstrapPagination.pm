@@ -6,7 +6,7 @@ use Mojo::ByteStream 'b';
 use strict;
 use warnings;
 
-our $VERSION = "0.03";
+our $VERSION = "0.04";
 
 # Homer: Well basically, I just copied the plant we have now.
 #        Then, I added some fins to lower wind resistance.  
@@ -23,6 +23,10 @@ sub  register{
       $opts = {} unless $opts;
       my $round = $opts->{round} || 4;
       my $param = $opts->{param} || "page";
+      my $class = $opts->{class}  || "";
+      if ($class ne ""){
+          $class = " " . $class;
+      }
       my $outer = $opts->{outer} || 2;
       my @current = ( $actual - $round .. $actual + $round );
       my @first   = ( $round > $actual ? (1..$round * 3 ) : (1..$outer) );
@@ -39,7 +43,7 @@ sub  register{
         $last = $number;
       }
       
-      my $html = "<ul class=\"pagination\">";
+      my $html = "<ul class=\"pagination$class\">";
       if( $actual == 1 ){
         $html .= "<li class=\"disabled\"><a href=\"#\" >&laquo;</a></li>";
       } else {
@@ -101,6 +105,7 @@ Options is a optional ref hash.
   %= bootstrap_nagination( $current_page, $total_pages, {
       round => 4,
       outer => 2,
+      class => 'pagination-lg',
       param => 'page' } );
 
 =over 1

@@ -2,6 +2,9 @@ Revision history for Perl extension Mojolicious-Plugin-BootstrapPagination
 
 {{$NEXT}}
 
+0.04 2014-03-03T10:47:45Z
+    - add class option    
+
 0.03 2014-03-02T20:04:42Z
 
     - change helper name

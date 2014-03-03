@@ -30,6 +30,7 @@ Options is a optional ref hash.
     %= bootstrap_nagination( $current_page, $total_pages, {
         round => 4,
         outer => 2,
+        class => 'pagination-lg',
         param => 'page' } );
 
 - round
