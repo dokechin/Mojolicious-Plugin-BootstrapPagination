@@ -6,7 +6,7 @@ use Mojo::ByteStream 'b';
 use strict;
 use warnings;
 
-our $VERSION = "0.06";
+our $VERSION = "0.07";
 
 # Homer: Well basically, I just copied the plant we have now.
 #        Then, I added some fins to lower wind resistance.  
@@ -77,6 +77,7 @@ __END__
 =head1 NAME
 
 Mojolicious::Plugin::PageNavigator - Page Navigator plugin for Mojolicious
+This module has derived from L<Mojolicious::Plugin::PageNavigator>
 
 =head1 SYNOPSIS
 
@@ -112,7 +113,7 @@ Options is a optional ref hash.
 
 =item round
 
-Number of pages arround the current page. Default: 4.
+Number of pages around the current page. Default: 4.
 
 =item outer
 

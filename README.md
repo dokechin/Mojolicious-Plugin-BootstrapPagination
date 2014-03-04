@@ -1,6 +1,7 @@
 # NAME
 
 Mojolicious::Plugin::PageNavigator - Page Navigator plugin for Mojolicious
+This module has derived from [Mojolicious::Plugin::PageNavigator](http://search.cpan.org/perldoc?Mojolicious::Plugin::PageNavigator)
 
 # SYNOPSIS
 
@@ -35,7 +36,7 @@ Options is a optional ref hash.
 
 - round
 
-    Number of pages arround the current page. Default: 4.
+    Number of pages around the current page. Default: 4.
 
 - outer
 
