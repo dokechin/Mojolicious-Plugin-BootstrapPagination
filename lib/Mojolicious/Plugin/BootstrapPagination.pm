@@ -6,7 +6,7 @@ use Mojo::ByteStream 'b';
 use strict;
 use warnings;
 
-our $VERSION = "0.05";
+our $VERSION = "0.06";
 
 # Homer: Well basically, I just copied the plant we have now.
 #        Then, I added some fins to lower wind resistance.  
@@ -128,6 +128,9 @@ Name of param for query url. Default: 'page'
 
 L<Mojolicious>, L<Mojolicious::Guides>, L<http://mojolicio.us>,L<Mojolicious::Plugin::PageNavigator>.
 
+=head1 Repository
+
+https://github.com/dokechin/Mojolicious-Plugin-BootstrapPagination
 
 =head1 LICENSE
 

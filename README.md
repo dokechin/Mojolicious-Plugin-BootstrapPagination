@@ -49,7 +49,9 @@ Options is a optional ref hash.
 
 [Mojolicious](http://search.cpan.org/perldoc?Mojolicious), [Mojolicious::Guides](http://search.cpan.org/perldoc?Mojolicious::Guides), [http://mojolicio.us](http://mojolicio.us),[Mojolicious::Plugin::PageNavigator](http://search.cpan.org/perldoc?Mojolicious::Plugin::PageNavigator).
 
+# Repository
 
+https://github.com/dokechin/Mojolicious-Plugin-BootstrapPagination
 
 # LICENSE
 
