@@ -42,11 +42,13 @@
       },
       "runtime" : {
          "requires" : {
+            "Mojolicious" : "4.0",
             "perl" : "5.008001"
          }
       },
       "test" : {
          "requires" : {
+            "Test::Mojo" : "0",
             "Test::More" : "0.98"
          }
       }
@@ -63,7 +65,7 @@
          "web" : "https://github.com/dokechin/Mojolicious-Plugin-BootstrapPagination"
       }
    },
-   "version" : "0.07",
+   "version" : "0.08",
    "x_contributors" : [
       "dokechin <user@user-PC.(none)>"
    ]
