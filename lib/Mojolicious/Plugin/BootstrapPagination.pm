@@ -6,7 +6,7 @@ use Mojo::ByteStream 'b';
 use strict;
 use warnings;
 
-our $VERSION = "0.08";
+our $VERSION = "0.09";
 
 # Homer: Well basically, I just copied the plant we have now.
 #        Then, I added some fins to lower wind resistance.  
@@ -76,16 +76,16 @@ __END__
 
 =head1 NAME
 
-Mojolicious::Plugin::PageNavigator - Page Navigator plugin for Mojolicious
+Mojolicious::Plugin::BootstrapPagination - Page Navigator plugin for Mojolicious
 This module has derived from L<Mojolicious::Plugin::PageNavigator>
 
 =head1 SYNOPSIS
 
   # Mojolicious::Lite
-  plugin 'bootstrap_nagination'
+  plugin 'bootstrap_pagination'
 
   # Mojolicious
-  $self->plugin( 'bootstrap_nagination' );
+  $self->plugin( 'bootstrap_pagination' );
 
 =head1 DESCRIPTION
 
@@ -97,13 +97,13 @@ L<Mojolicious::Plugin::BootstrapPagination> generates standard page navigation b
 
 =head2 bootstrap_pagination
 
-  %= bootstrap_nagination( $current_page, $total_pages, $opts );
+  %= bootstrap_pagination( $current_page, $total_pages, $opts );
 
 =head3 Options
 
 Options is a optional ref hash.
 
-  %= bootstrap_nagination( $current_page, $total_pages, {
+  %= bootstrap_pagination( $current_page, $total_pages, {
       round => 4,
       outer => 2,
       class => 'pagination-lg',

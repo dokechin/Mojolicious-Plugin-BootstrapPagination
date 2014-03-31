@@ -1,15 +1,15 @@
 # NAME
 
-Mojolicious::Plugin::PageNavigator - Page Navigator plugin for Mojolicious
+Mojolicious::Plugin::BootstrapPagination - Page Navigator plugin for Mojolicious
 This module has derived from [Mojolicious::Plugin::PageNavigator](http://search.cpan.org/perldoc?Mojolicious::Plugin::PageNavigator)
 
 # SYNOPSIS
 
     # Mojolicious::Lite
-    plugin 'bootstrap_nagination'
+    plugin 'bootstrap_pagination'
 
     # Mojolicious
-    $self->plugin( 'bootstrap_nagination' );
+    $self->plugin( 'bootstrap_pagination' );
 
 # DESCRIPTION
 
@@ -22,13 +22,13 @@ This module has derived from [Mojolicious::Plugin::PageNavigator](http://search.
 
 ## bootstrap\_pagination
 
-    %= bootstrap_nagination( $current_page, $total_pages, $opts );
+    %= bootstrap_pagination( $current_page, $total_pages, $opts );
 
 ### Options
 
 Options is a optional ref hash.
 
-    %= bootstrap_nagination( $current_page, $total_pages, {
+    %= bootstrap_pagination( $current_page, $total_pages, {
         round => 4,
         outer => 2,
         class => 'pagination-lg',
