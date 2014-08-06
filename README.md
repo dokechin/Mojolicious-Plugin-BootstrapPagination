@@ -64,3 +64,7 @@ it under the same terms as Perl itself.
 # AUTHOR
 
 dokechin <>
+
+# CONTRIBUTORS
+
+Andrey Chips Kuzmin <chipsoid@cpan.org>
