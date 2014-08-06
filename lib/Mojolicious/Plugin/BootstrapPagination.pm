@@ -1,6 +1,6 @@
 package Mojolicious::Plugin::BootstrapPagination;
 use Mojo::Base 'Mojolicious::Plugin';
-use POSIX( qw/ceil floor/ );
+use POSIX( qw/ceil/ );
 use Mojo::ByteStream 'b';
 
 use strict;
