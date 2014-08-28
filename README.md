@@ -31,6 +31,8 @@ Options is a optional ref hash.
     %= bootstrap_pagination( $current_page, $total_pages, {
         round => 4,
         outer => 2,
+        query => "&id=$id",
+        start => 1,
         class => 'pagination-lg',
         param => 'page' } );
 
@@ -45,6 +47,14 @@ Options is a optional ref hash.
 - param
 
     Name of param for query url. Default: 'page'
+
+- query
+
+    Additional query string to urls. Optional.
+
+- start
+
+    Start number for query string. Default: 1. Optional.
 
 # SEE ALSO
 
@@ -64,3 +74,7 @@ it under the same terms as Perl itself.
 # AUTHOR
 
 dokechin <>
+
+# CONTRIBUTORS
+
+Andrey Chips Kuzmin <chipsoid@cpan.org>
