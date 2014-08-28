@@ -50,7 +50,6 @@ sub  register{
         $html .= "<li><a href=\"" . $self->url_for->query( $param => $actual - 1 ) . $query . "\" >&laquo;</a></li>";
       }
       my $last_num = -1;
-      warn("@ret");
       foreach my $number( @ret ){
         my $show_number = $start > 0 ? $number : ( $number =~ /\d+/ ? $number + 1 : $number );
         if( $number eq ".." && $last_num < $actual ){
