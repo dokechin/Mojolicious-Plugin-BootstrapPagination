@@ -6,7 +6,7 @@ use Mojo::ByteStream 'b';
 use strict;
 use warnings;
 
-our $VERSION = "0.10";
+our $VERSION = "0.11";
 
 # Homer: Well basically, I just copied the plant we have now.
 #        Then, I added some fins to lower wind resistance.  
@@ -137,7 +137,7 @@ Name of param for query url. Default: 'page'
 
 =item query
 
-Additional query string to urls. Optional.
+Additional query string to url. Optional.
 
 =item start
 
