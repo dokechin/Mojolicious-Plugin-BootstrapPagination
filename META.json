@@ -1,10 +1,10 @@
 {
-   "abstract" : "Page Navigator plugin for Mojolicious",
+   "abstract" : "Page Navigator plugin for Mojolicious This module has derived from L<Mojolicious::Plugin::PageNavigator>",
    "author" : [
       "dokechin <>"
    ],
    "dynamic_config" : 0,
-   "generated_by" : "Minilla/v0.6.7, CPAN::Meta::Converter version 2.132510",
+   "generated_by" : "Minilla/v0.11.1, CPAN::Meta::Converter version 2.140640",
    "license" : [
       "perl_5"
    ],
@@ -21,7 +21,8 @@
          "share",
          "eg",
          "examples",
-         "author"
+         "author",
+         "builder"
       ]
    },
    "prereqs" : {
@@ -60,13 +61,14 @@
       },
       "homepage" : "https://github.com/dokechin/Mojolicious-Plugin-BootstrapPagination",
       "repository" : {
-         "type" : "git",
-         "url" : "git://github.com/dokechin/Mojolicious-Plugin-BootstrapPagination.git",
+         "url" : "https://github.com/dokechin/Mojolicious-Plugin-BootstrapPagination.git",
          "web" : "https://github.com/dokechin/Mojolicious-Plugin-BootstrapPagination"
       }
    },
-   "version" : "0.09",
+   "version" : "0.10",
    "x_contributors" : [
-      "dokechin <user@user-PC.(none)>"
+      "dokechin <user@user-PC.(none)>",
+      "Andrey Kuzmin <chips@reg.ru>",
+      "Tetsuya Tatsumi <ttatsumi@ra2.so-net.ne.jp>"
    ]
 }

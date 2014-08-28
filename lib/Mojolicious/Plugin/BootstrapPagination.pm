@@ -31,9 +31,8 @@ sub  register{
       my $query = $opts->{query} || "";
       my $start = $opts->{start} // 1;
       my @current = ( $actual - $round .. $actual + $round );
-      my @first   = ( $round > $actual ? ($start..$round * 3 ) : ($start..$outer) );
-      my @tail    = ( $count - $round < $actual ? ( $count - $round * 2 + 1 .. $count ) : 
-          ( $count - $outer + 1 .. $count ) );
+      my @first   = ($start.. $start + $outer - 1);
+      my @tail    = ( $count - $outer + 1 .. $count );
       my @ret = ();
       my $last = undef;
       foreach my $number( sort { $a <=> $b } @current, @first, @tail ){
@@ -51,6 +50,7 @@ sub  register{
         $html .= "<li><a href=\"" . $self->url_for->query( $param => $actual - 1 ) . $query . "\" >&laquo;</a></li>";
       }
       my $last_num = -1;
+      warn("@ret");
       foreach my $number( @ret ){
         my $show_number = $start > 0 ? $number : ( $number =~ /\d+/ ? $number + 1 : $number );
         if( $number eq ".." && $last_num < $actual ){
