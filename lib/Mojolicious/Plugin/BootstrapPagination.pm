@@ -62,7 +62,7 @@ sub  register{
           my $offset = ceil( ( ( $back - $forw ) / 2 ) + $forw );
           $html .= "<li><a href=\"" . $self->url_for->query( $param => $start == 0 ? $offset + 1 : $offset ) . $query ."\" >..</a></li>";
         } elsif( $number == $actual ) {
-          $html .= "<li class=\"disabled\"><a href=\"#\">$show_number</a></li>";
+          $html .= "<li class=\"active\"><span>$show_number</span></li>";
         } else {
           $html .= "<li><a href=\"" . $self->url_for->query( $param => $number ) . $query ."\">$show_number</a></li>";
         }
