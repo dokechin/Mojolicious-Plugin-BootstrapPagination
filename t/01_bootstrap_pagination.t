@@ -9,7 +9,7 @@ BEGIN{
   $ENV{MOJO_NO_IPV6} = $ENV{MOJO_POLL} = 1 ;
   $ENV{MOJO_APP} = undef; # 
 }
-use Test::More tests => 24;
+use Test::More tests => 27;
 use Test::Mojo;
 
 
@@ -51,6 +51,11 @@ get( "/query" => sub(){
   } );
 
 get( "/start" => sub(){
+    my $self = shift;
+    $self->render( text => $self->bootstrap_pagination( 9, 18, {start=>2, round=>1,outer=>1}) . "\n" );
+  } );
+
+get( "/start2" => sub(){
     my $self = shift;
     $self->render( text => $self->bootstrap_pagination( 9, 18, {start=>2, round=>1,outer=>1}) . "\n" );
   } );
@@ -102,4 +107,10 @@ $t->get_ok( "/start" )
   ->status_is( 200 )
   ->content_is(<<EOF);
 <ul class="pagination"><li><a href="/start?page=8" >&laquo;</a></li><li><a href="/start?page=2">2</a></li><li><a href="/start?page=5" >..</a></li><li><a href="/start?page=8">8</a></li><li class="disabled"><a href="#">9</a></li><li><a href="/start?page=10">10</a></li><li><a href="/start?page=14" >..</a></li><li><a href="/start?page=18">18</a></li><li><a href="/start?page=10" >&raquo;</a></li></ul>
+EOF
+
+$t->get_ok( "/start2?id=1" )
+  ->status_is( 200 )
+  ->content_is(<<EOF);
+<ul class="pagination"><li><a href="/start2?id=1&page=8" >&laquo;</a></li><li><a href="/start2?id=1&page=2">2</a></li><li><a href="/start2?id=1&page=5" >..</a></li><li><a href="/start2?id=1&page=8">8</a></li><li class="disabled"><a href="#">9</a></li><li><a href="/start2?id=1&page=10">10</a></li><li><a href="/start2?id=1&page=14" >..</a></li><li><a href="/start2?id=1&page=18">18</a></li><li><a href="/start2?id=1&page=10" >&raquo;</a></li></ul>
 EOF
