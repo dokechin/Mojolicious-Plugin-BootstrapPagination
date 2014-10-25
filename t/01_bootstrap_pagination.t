@@ -112,5 +112,5 @@ EOF
 $t->get_ok( "/start2?id=1" )
   ->status_is( 200 )
   ->content_is(<<EOF);
-<ul class="pagination"><li><a href="/start2?id=1&page=8" >&laquo;</a></li><li><a href="/start2?id=1&page=2">2</a></li><li><a href="/start2?id=1&page=5" >..</a></li><li><a href="/start2?id=1&page=8">8</a></li><li class="disabled"><a href="#">9</a></li><li><a href="/start2?id=1&page=10">10</a></li><li><a href="/start2?id=1&page=14" >..</a></li><li><a href="/start2?id=1&page=18">18</a></li><li><a href="/start2?id=1&page=10" >&raquo;</a></li></ul>
+<ul class="pagination"><li><a href="/start2?id=1&page=8" >&laquo;</a></li><li><a href="/start2?id=1&page=2">2</a></li><li><a href="/start2?id=1&page=5" >&hellip;</a></li><li><a href="/start2?id=1&page=8">8</a></li><li class="disabled"><a href="#">9</a></li><li><a href="/start2?id=1&page=10">10</a></li><li><a href="/start2?id=1&page=14" >&hellip;</a></li><li><a href="/start2?id=1&page=18">18</a></li><li><a href="/start2?id=1&page=10" >&raquo;</a></li></ul>
 EOF
