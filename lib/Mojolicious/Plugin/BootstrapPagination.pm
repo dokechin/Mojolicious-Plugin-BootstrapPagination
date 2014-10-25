@@ -54,13 +54,13 @@ sub  register{
         my $show_number = $start > 0 ? $number : ( $number =~ /\d+/ ? $number + 1 : $number );
         if( $number eq ".." && $last_num < $actual ){
           my $offset = ceil( ( $actual - $round ) / 2 ) + 1 ;
-          $html .= "<li><a href=\"" . $self->url_with->query( [$param => $start == 0 ? $offset + 1 : $offset] ) . $query ."\" >..</a></li>";
+          $html .= "<li><a href=\"" . $self->url_with->query( [$param => $start == 0 ? $offset + 1 : $offset] ) . $query ."\" >&hellip;</a></li>";
         }
         elsif( $number eq ".." && $last_num > $actual ) {
           my $back = $count - $outer + 1;
           my $forw = $round + $actual;
           my $offset = ceil( ( ( $back - $forw ) / 2 ) + $forw );
-          $html .= "<li><a href=\"" . $self->url_with->query( [$param => $start == 0 ? $offset + 1 : $offset] ) . $query ."\" >..</a></li>";
+          $html .= "<li><a href=\"" . $self->url_with->query( [$param => $start == 0 ? $offset + 1 : $offset] ) . $query ."\" >&hellip;</a></li>";
         } elsif( $number == $actual ) {
           $html .= "<li class=\"disabled\"><a href=\"#\">$show_number</a></li>";
         } else {
