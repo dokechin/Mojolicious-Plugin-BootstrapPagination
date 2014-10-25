@@ -47,31 +47,31 @@ sub  register{
       if( $actual == $start ){
         $html .= "<li class=\"disabled\"><a href=\"#\" >&laquo;</a></li>";
       } else {
-        $html .= "<li><a href=\"" . $self->url_for->query( $param => $actual - 1 ) . $query . "\" >&laquo;</a></li>";
+        $html .= "<li><a href=\"" . $self->url_with->query( [$param => $actual - 1] ) . $query . "\" >&laquo;</a></li>";
       }
       my $last_num = -1;
       foreach my $number( @ret ){
         my $show_number = $start > 0 ? $number : ( $number =~ /\d+/ ? $number + 1 : $number );
         if( $number eq ".." && $last_num < $actual ){
           my $offset = ceil( ( $actual - $round ) / 2 ) + 1 ;
-          $html .= "<li><a href=\"" . $self->url_for->query( $param => $start == 0 ? $offset + 1 : $offset ) . $query ."\" >..</a></li>";
+          $html .= "<li><a href=\"" . $self->url_with->query( [$param => $start == 0 ? $offset + 1 : $offset] ) . $query ."\" >..</a></li>";
         }
         elsif( $number eq ".." && $last_num > $actual ) {
           my $back = $count - $outer + 1;
           my $forw = $round + $actual;
           my $offset = ceil( ( ( $back - $forw ) / 2 ) + $forw );
-          $html .= "<li><a href=\"" . $self->url_for->query( $param => $start == 0 ? $offset + 1 : $offset ) . $query ."\" >..</a></li>";
+          $html .= "<li><a href=\"" . $self->url_with->query( [$param => $start == 0 ? $offset + 1 : $offset] ) . $query ."\" >..</a></li>";
         } elsif( $number == $actual ) {
           $html .= "<li class=\"disabled\"><a href=\"#\">$show_number</a></li>";
         } else {
-          $html .= "<li><a href=\"" . $self->url_for->query( $param => $number ) . $query ."\">$show_number</a></li>";
+          $html .= "<li><a href=\"" . $self->url_with->query( [$param => $number] ) . $query ."\">$show_number</a></li>";
         }
          $last_num = $number;
       }
       if( $actual == $count ){
-        $html .= "<li class=\"disabled\"><a href=\"" . $self->url_for->query( $param => $actual + 1 ) . $query . "\" >&raquo;</a></li>";
+        $html .= "<li class=\"disabled\"><a href=\"" . $self->url_with->query( [$param => $actual + 1] ) . $query . "\" >&raquo;</a></li>";
       } else {
-        $html .= "<li><a href=\"" . $self->url_for->query( $param => $actual + 1 ) . $query . "\" >&raquo;</a></li>";
+        $html .= "<li><a href=\"" . $self->url_with->query( [$param => $actual + 1] ) . $query . "\" >&raquo;</a></li>";
       }
       $html .= "</ul>";
       return b( $html );
