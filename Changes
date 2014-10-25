@@ -2,6 +2,12 @@ Revision history for Perl extension Mojolicious-Plugin-BootstrapPagination
 
 {{$NEXT}}
 
+0.12 2014-10-25T00:47:43Z
+
+    - Inherit query parameters from the current request   
+    - Replace `..` in slice with `…`  c99358b 
+    - Changed markup for active page in Bootstrap 3
+ 
 0.11 2014-08-28T09:40:07Z
 
     - add options
