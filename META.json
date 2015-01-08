@@ -1,10 +1,10 @@
 {
-   "abstract" : "Page Navigator plugin for Mojolicious",
+   "abstract" : "Page Navigator plugin for Mojolicious This module has derived from L<Mojolicious::Plugin::PageNavigator>",
    "author" : [
       "dokechin <>"
    ],
    "dynamic_config" : 0,
-   "generated_by" : "Minilla/v0.6.7, CPAN::Meta::Converter version 2.132510",
+   "generated_by" : "Minilla/v2.2.0, CPAN::Meta::Converter version 2.140640",
    "license" : [
       "perl_5"
    ],
@@ -21,21 +21,21 @@
          "share",
          "eg",
          "examples",
-         "author"
+         "author",
+         "builder"
       ]
    },
    "prereqs" : {
       "configure" : {
          "requires" : {
-            "CPAN::Meta" : "0",
-            "CPAN::Meta::Prereqs" : "0",
             "Module::Build" : "0.38"
          }
       },
       "develop" : {
          "requires" : {
             "Test::CPAN::Meta" : "0",
-            "Test::MinimumVersion" : "0.10108",
+            "Test::MinimumVersion::Fast" : "0.04",
+            "Test::PAUSE::Permissions" : "0.04",
             "Test::Pod" : "1.41",
             "Test::Spellunker" : "v0.2.7"
          }
@@ -48,6 +48,7 @@
       },
       "test" : {
          "requires" : {
+            "Mojolicious::Plugin::I18N" : "0",
             "Test::Mojo" : "0",
             "Test::More" : "0.98"
          }
@@ -60,15 +61,17 @@
       },
       "homepage" : "https://github.com/dokechin/Mojolicious-Plugin-BootstrapPagination",
       "repository" : {
-         "url" : "https://github.com/dokechin/Mojolicious-Plugin-BootstrapPagination.git",
+         "type" : "git",
+         "url" : "git://github.com/dokechin/Mojolicious-Plugin-BootstrapPagination.git",
          "web" : "https://github.com/dokechin/Mojolicious-Plugin-BootstrapPagination"
       }
    },
    "version" : "0.12",
    "x_contributors" : [
       "Andrey Kuzmin <chips@reg.ru>",
-      "dokechin <ttatsumi@ra2.so-net.ne.jp>",
       "Alexander Groshev <sattellite@yandex.ru>",
-      "dokechin <user@user-PC.(none)>"
+      "dokechin <user@user-PC.(none)>",
+      "reneeb <github@renee-baecker.de>",
+      "dokechin <ttatsumi@ra2.so-net.ne.jp>"
    ]
 }
