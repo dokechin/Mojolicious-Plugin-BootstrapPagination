@@ -25,15 +25,15 @@ sub  register{
       $count = ceil($count);
       return "" unless $count > 1;
       $opts = {} unless $opts;
-      my $round = $opts->{round} || 4;
-      my $param = $opts->{param} || "page";
-      my $class = $opts->{class} || "";
+      my $round = $opts->{round} || $args->{round} || 4;
+      my $param = $opts->{param} || $args->{param} || "page";
+      my $class = $opts->{class} || $args->{class} || "";
       if ($class ne ""){
           $class = " " . $class;
       }
-      my $outer = $opts->{outer} || 2;
-      my $query = $opts->{query} || "";
-      my $start = $opts->{start} // 1;
+      my $outer = $opts->{outer} || $args->{outer} || 2;
+      my $query = exists $opts->{query} ? $opts->{query} : $args->{query} || "";
+      my $start = $opts->{start} // $args->{start} // 1;
       my @current = ( $actual - $round .. $actual + $round );
       my @first   = ($start.. $start + $outer - 1);
       my @tail    = ( $count - $outer + 1 .. $count );
