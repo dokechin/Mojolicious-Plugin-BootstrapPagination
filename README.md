@@ -1,7 +1,7 @@
 # NAME
 
 Mojolicious::Plugin::BootstrapPagination - Page Navigator plugin for Mojolicious
-This module has derived from [Mojolicious::Plugin::PageNavigator](https://metacpan.org/pod/Mojolicious::Plugin::PageNavigator)
+This module has derived from [Mojolicious::Plugin::PageNavigator](http://search.cpan.org/perldoc?Mojolicious::Plugin::PageNavigator)
 
 # SYNOPSIS
 
@@ -13,7 +13,8 @@ This module has derived from [Mojolicious::Plugin::PageNavigator](https://metacp
 
 # DESCRIPTION
 
-[Mojolicious::Plugin::BootstrapPagination](https://metacpan.org/pod/Mojolicious::Plugin::BootstrapPagination) generates standard page navigation bar, like 
+[Mojolicious::Plugin::BootstrapPagination](http://search.cpan.org/perldoc?Mojolicious::Plugin::BootstrapPagination) generates standard page navigation bar, like 
+  
 
 <<  1  2 ... 11 12 13 14 15 ... 85 86 >>
 
@@ -57,15 +58,17 @@ Options is a optional ref hash.
 
 # INTERNATIONALIZATION
 
-If you want to use internationalization (I18N), you can pass a coderef via _localize_.
+If you want to use internationalization (I18N), you can pass a code reference via _localize_.
 
     plugin 'bootstrap_pagination' => {
       localize => \&localize,
     };
     
+
     sub localize {
-      my ($self, $number) = @_;
+      my ($number) = @_;
     
+
       my %trans = (
         1 => 'one',
         2 => 'two',
@@ -81,31 +84,15 @@ If you want to use internationalization (I18N), you can pass a coderef via _loca
        15 => 'fifteen',
       );
     
+
       return $trans{$number};
     }
 
 This will print the words instead of the numbers.
 
-You can use with Mojolicious::Plugin::I18N.
-
-    plugin 'I18N' => {
-      namespace => "Yourpackage::I18N"
-    };
-
-    plugin 'bootstrap_pagination' => {
-      localize => \&localize,
-    };
-    
-    sub localize {
-      my ($self, $number) = @_;
-      return $self->l($number);
-    }
-
-
 # SEE ALSO
 
-[Mojolicious](https://metacpan.org/pod/Mojolicious), [Mojolicious::Guides](https://metacpan.org/pod/Mojolicious::Guides), [http://mojolicio.us](http://mojolicio.us),[Mojolicious::Plugin::PageNavigator](https://metacpan.org/pod/Mojolicious::Plugin::PageNavigator).
-[Mojolicious::Plugin::I18N](https://metacpan.org/pod/Mojolicious::Plugin::I18N)
+[Mojolicious](http://search.cpan.org/perldoc?Mojolicious), [Mojolicious::Guides](http://search.cpan.org/perldoc?Mojolicious::Guides), [http://mojolicio.us](http://mojolicio.us),[Mojolicious::Plugin::PageNavigator](http://search.cpan.org/perldoc?Mojolicious::Plugin::PageNavigator).
 
 # Repository
 
@@ -125,8 +112,3 @@ dokechin <>
 # CONTRIBUTORS
 
 Andrey Chips Kuzmin <chipsoid@cpan.org>
-
-Renee Baecker <module@renee-baecker.de>
-
-
-

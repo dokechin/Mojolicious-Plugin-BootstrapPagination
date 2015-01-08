@@ -6,7 +6,7 @@ use Mojo::ByteStream 'b';
 use strict;
 use warnings;
 
-our $VERSION = "0.12";
+our $VERSION = "0.13";
 
 # Homer: Well basically, I just copied the plant we have now.
 #        Then, I added some fins to lower wind resistance.  
@@ -156,7 +156,7 @@ Start number for query string. Default: 1. Optional.
 
 =head1 INTERNATIONALIZATION
 
-If you want to use internationalization (I18N), you can pass a coderef via I<localize>.
+If you want to use internationalization (I18N), you can pass a code reference via I<localize>.
 
   plugin 'bootstrap_pagination' => {
     localize => \&localize,

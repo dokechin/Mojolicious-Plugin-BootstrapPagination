@@ -2,6 +2,11 @@ Revision history for Perl extension Mojolicious-Plugin-BootstrapPagination
 
 {{$NEXT}}
 
+0.13 2015-01-08T12:20:05Z
+
+    - Add I18N feature  
+    - allow to set configs when plugin is registered  
+
 0.12 2014-10-25T00:47:43Z
 
     - Inherit query parameters from the current request   
