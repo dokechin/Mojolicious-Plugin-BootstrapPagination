@@ -1,7 +1,7 @@
 # NAME
 
 Mojolicious::Plugin::BootstrapPagination - Page Navigator plugin for Mojolicious
-This module has derived from [Mojolicious::Plugin::PageNavigator](http://search.cpan.org/perldoc?Mojolicious::Plugin::PageNavigator)
+This module has derived from [Mojolicious::Plugin::PageNavigator](https://metacpan.org/pod/Mojolicious::Plugin::PageNavigator)
 
 # SYNOPSIS
 
@@ -13,8 +13,7 @@ This module has derived from [Mojolicious::Plugin::PageNavigator](http://search.
 
 # DESCRIPTION
 
-[Mojolicious::Plugin::BootstrapPagination](http://search.cpan.org/perldoc?Mojolicious::Plugin::BootstrapPagination) generates standard page navigation bar, like 
-  
+[Mojolicious::Plugin::BootstrapPagination](https://metacpan.org/pod/Mojolicious::Plugin::BootstrapPagination) generates standard page navigation bar, like 
 
 <<  1  2 ... 11 12 13 14 15 ... 85 86 >>
 
@@ -56,9 +55,40 @@ Options is a optional ref hash.
 
     Start number for query string. Default: 1. Optional.
 
+# INTERNATIONALIZATION
+
+If you want to use internationalization (I18N), you can pass a coderef via _localize_.
+
+    plugin 'bootstrap_pagination' => {
+      localize => \&localize,
+    };
+    
+    sub localize {
+      my ($number) = @_;
+    
+      my %trans = (
+        1 => 'one',
+        2 => 'two',
+        6 => 'six',
+        7 => 'seven',
+        8 => 'eight',
+        9 => 'nine',
+       10 => 'ten',
+       11 => 'eleven',
+       12 => 'twelve',
+       13 => 'thirteen',
+       14 => 'fourteen',
+       15 => 'fifteen',
+      );
+    
+      return $trans{$number};
+    }
+
+This will print the words instead of the numbers.
+
 # SEE ALSO
 
-[Mojolicious](http://search.cpan.org/perldoc?Mojolicious), [Mojolicious::Guides](http://search.cpan.org/perldoc?Mojolicious::Guides), [http://mojolicio.us](http://mojolicio.us),[Mojolicious::Plugin::PageNavigator](http://search.cpan.org/perldoc?Mojolicious::Plugin::PageNavigator).
+[Mojolicious](https://metacpan.org/pod/Mojolicious), [Mojolicious::Guides](https://metacpan.org/pod/Mojolicious::Guides), [http://mojolicio.us](http://mojolicio.us),[Mojolicious::Plugin::PageNavigator](https://metacpan.org/pod/Mojolicious::Plugin::PageNavigator).
 
 # Repository
 

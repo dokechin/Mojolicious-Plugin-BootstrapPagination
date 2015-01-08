@@ -58,7 +58,7 @@ sub  register{
         my $show_number = $start > 0 ? $number : ( $number =~ /\d+/ ? $number + 1 : $number );
 
         if ( $localize ) {
-            $show_number = $localize->($show_number);
+            $show_number = $localize->($self, $show_number);
         }
 
         if( $number eq ".." && $last_num < $actual ){
