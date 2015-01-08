@@ -2,6 +2,7 @@
 
 use strict;
 use warnings;
+use lib './t/lib';
 
 BEGIN{
   $ENV{MOJO_NO_IPV6} = $ENV{MOJO_POLL} = 1 ;
@@ -10,13 +11,17 @@ BEGIN{
 use Test::More;
 use Test::Mojo;
 
-
 use Mojolicious::Lite;
+
+plugin I18N => {namespace => "Dokechin::I18N"};
 plugin 'bootstrap_pagination' => {
    localize => \&localize,
 };
+
+
 get( "/" => sub(){
     my $self = shift;
+    $self->languages ("en");
     $self->render( text => $self->bootstrap_pagination( 10, 15 ) . "\n" );
   } );
 
@@ -31,22 +36,7 @@ done_testing();
 
 sub localize {
     my ($self, $number) = @_;
-
-    my %trans = (
-      1 => 'one',
-      2 => 'two',
-      6 => 'six',
-      7 => 'seven',
-      8 => 'eight',
-      9 => 'nine',
-     10 => 'ten',
-     11 => 'eleven',
-     12 => 'twelve',
-     13 => 'thirteen',
-     14 => 'fourteen',
-     15 => 'fifteen',
-    );
-
-    return $trans{$number};
+    $self->l($number);
 }
+
 

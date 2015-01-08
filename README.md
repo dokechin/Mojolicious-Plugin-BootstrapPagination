@@ -108,3 +108,8 @@ dokechin <>
 # CONTRIBUTORS
 
 Andrey Chips Kuzmin <chipsoid@cpan.org>
+
+Renee Baecker <module@renee-baecker.de>
+
+
+
