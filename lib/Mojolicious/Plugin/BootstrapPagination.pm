@@ -18,6 +18,10 @@ sub  register{
 
   $app->helper( bootstrap_pagination => sub{
       my ( $self, $actual, $count, $opts ) = @_;
+
+      my $localize = ( $opts->{localize} || $args->{localize} ) ?
+          ( $opts->{localize} || $args->{localize} ) : undef;
+
       $count = ceil($count);
       return "" unless $count > 1;
       $opts = {} unless $opts;
@@ -52,6 +56,11 @@ sub  register{
       my $last_num = -1;
       foreach my $number( @ret ){
         my $show_number = $start > 0 ? $number : ( $number =~ /\d+/ ? $number + 1 : $number );
+
+        if ( $localize ) {
+            $show_number = $localize->($show_number);
+        }
+
         if( $number eq ".." && $last_num < $actual ){
           my $offset = ceil( ( $actual - $round ) / 2 ) + 1 ;
           $html .= "<li><a href=\"" . $self->url_with->query( [$param => $start == 0 ? $offset + 1 : $offset] ) . $query ."\" >&hellip;</a></li>";
@@ -144,6 +153,37 @@ Additional query string to url. Optional.
 Start number for query string. Default: 1. Optional.
 
 =back
+
+=head1 INTERNATIONALIZATION
+
+If you want to use internationalization (I18N), you can pass a coderef via I<localize>.
+
+  plugin 'bootstrap_pagination' => {
+    localize => \&localize,
+  };
+  
+  sub localize {
+    my ($number) = @_;
+  
+    my %trans = (
+      1 => 'one',
+      2 => 'two',
+      6 => 'six',
+      7 => 'seven',
+      8 => 'eight',
+      9 => 'nine',
+     10 => 'ten',
+     11 => 'eleven',
+     12 => 'twelve',
+     13 => 'thirteen',
+     14 => 'fourteen',
+     15 => 'fifteen',
+    );
+  
+    return $trans{$number};
+  }
+
+This will print the words instead of the numbers.
 
 =head1 SEE ALSO
 
