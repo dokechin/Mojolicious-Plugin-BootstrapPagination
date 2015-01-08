@@ -64,7 +64,7 @@ If you want to use internationalization (I18N), you can pass a coderef via _loca
     };
     
     sub localize {
-      my ($number) = @_;
+      my ($self, $number) = @_;
     
       my %trans = (
         1 => 'one',
@@ -86,9 +86,26 @@ If you want to use internationalization (I18N), you can pass a coderef via _loca
 
 This will print the words instead of the numbers.
 
+You can use with Mojolicious::Plugin::I18N.
+
+    plugin 'I18N' => {
+      namespace => "Yourpackage::I18N"
+    };
+
+    plugin 'bootstrap_pagination' => {
+      localize => \&localize,
+    };
+    
+    sub localize {
+      my ($self, $number) = @_;
+      return $self->l($number);
+    }
+
+
 # SEE ALSO
 
 [Mojolicious](https://metacpan.org/pod/Mojolicious), [Mojolicious::Guides](https://metacpan.org/pod/Mojolicious::Guides), [http://mojolicio.us](http://mojolicio.us),[Mojolicious::Plugin::PageNavigator](https://metacpan.org/pod/Mojolicious::Plugin::PageNavigator).
+[Mojolicious::Plugin::I18N](https://metacpan.org/pod/Mojolicious::Plugin::I18N)
 
 # Repository
 
