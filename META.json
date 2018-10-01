@@ -65,7 +65,7 @@
          "web" : "https://github.com/dokechin/Mojolicious-Plugin-BootstrapPagination"
       }
    },
-   "version" : "0.13",
+   "version" : "0.14",
    "x_contributors" : [
       "Andrey Kuzmin <chips@reg.ru>",
       "Alexander Groshev <sattellite@yandex.ru>",

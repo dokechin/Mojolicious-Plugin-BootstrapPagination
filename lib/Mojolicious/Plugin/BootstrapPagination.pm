@@ -6,7 +6,7 @@ use Mojo::ByteStream 'b';
 use strict;
 use warnings;
 
-our $VERSION = "0.13";
+our $VERSION = "0.14";
 
 # Homer: Well basically, I just copied the plant we have now.
 #        Then, I added some fins to lower wind resistance.  
@@ -28,6 +28,8 @@ sub  register{
       my $round = $opts->{round} || $args->{round} || 4;
       my $param = $opts->{param} || $args->{param} || "page";
       my $class = $opts->{class} || $args->{class} || "";
+      my $item_class = $opts->{item_class} || $args->{item_class} || "page-item";
+
       if ($class ne ""){
           $class = " " . $class;
       }
@@ -49,9 +51,9 @@ sub  register{
       }
       my $html = "<ul class=\"pagination$class\">";
       if( $actual == $start ){
-        $html .= "<li class=\"disabled\"><a href=\"#\" >&laquo;</a></li>";
+        $html .= "<li class=\"disabled $item_class\"><a href=\"#\" >&laquo;</a></li>";
       } else {
-        $html .= "<li><a href=\"" . $self->url_with->query( [$param => $actual - 1] ) . $query . "\" >&laquo;</a></li>";
+        $html .= "<li class=\"$item_class\"><a href=\"" . $self->url_with->query( [$param => $actual - 1] ) . $query . "\" >&laquo;</a></li>";
       }
       my $last_num = -1;
       foreach my $number( @ret ){
@@ -63,24 +65,24 @@ sub  register{
 
         if( $number eq ".." && $last_num < $actual ){
           my $offset = ceil( ( $actual - $round ) / 2 ) + 1 ;
-          $html .= "<li><a href=\"" . $self->url_with->query( [$param => $start == 0 ? $offset + 1 : $offset] ) . $query ."\" >&hellip;</a></li>";
+          $html .= "<li class=\"$item_class\"><a href=\"" . $self->url_with->query( [$param => $start == 0 ? $offset + 1 : $offset] ) . $query ."\" >&hellip;</a></li>";
         }
         elsif( $number eq ".." && $last_num > $actual ) {
           my $back = $count - $outer + 1;
           my $forw = $round + $actual;
           my $offset = ceil( ( ( $back - $forw ) / 2 ) + $forw );
-          $html .= "<li><a href=\"" . $self->url_with->query( [$param => $start == 0 ? $offset + 1 : $offset] ) . $query ."\" >&hellip;</a></li>";
+          $html .= "<li class=\"$item_class\"><a href=\"" . $self->url_with->query( [$param => $start == 0 ? $offset + 1 : $offset] ) . $query ."\" >&hellip;</a></li>";
         } elsif( $number == $actual ) {
-          $html .= "<li class=\"active\"><span>$show_number</span></li>";
+          $html .= "<li class=\"active $item_class\"><span>$show_number</span></li>";
         } else {
-          $html .= "<li><a href=\"" . $self->url_with->query( [$param => $number] ) . $query ."\">$show_number</a></li>";
+          $html .= "<li class=\"$item_class\"><a href=\"" . $self->url_with->query( [$param => $number] ) . $query ."\">$show_number</a></li>";
         }
          $last_num = $number;
       }
       if( $actual == $count ){
-        $html .= "<li class=\"disabled\"><a href=\"" . $self->url_with->query( [$param => $actual + 1] ) . $query . "\" >&raquo;</a></li>";
+        $html .= "<li class=\"disabled $item_class\"><a href=\"" . $self->url_with->query( [$param => $actual + 1] ) . $query . "\" >&raquo;</a></li>";
       } else {
-        $html .= "<li><a href=\"" . $self->url_with->query( [$param => $actual + 1] ) . $query . "\" >&raquo;</a></li>";
+        $html .= "<li class=\"$item_class\"><a href=\"" . $self->url_with->query( [$param => $actual + 1] ) . $query . "\" >&raquo;</a></li>";
       }
       $html .= "</ul>";
       return b( $html );
@@ -128,6 +130,7 @@ Options is a optional ref hash.
       query => "&id=$id",
       start => 1,
       class => 'pagination-lg',
+      item_class => 'page-item',
       param => 'page' } );
 
 =over 1
