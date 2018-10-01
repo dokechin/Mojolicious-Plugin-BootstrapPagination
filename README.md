@@ -34,6 +34,7 @@ Options is a optional ref hash.
         query => "&id=$id",
         start => 1,
         class => 'pagination-lg',
+        item_class => 'page-item',
         param => 'page' } );
 
 - round
