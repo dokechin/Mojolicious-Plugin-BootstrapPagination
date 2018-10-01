@@ -28,7 +28,7 @@ sub  register{
       my $round = $opts->{round} || $args->{round} || 4;
       my $param = $opts->{param} || $args->{param} || "page";
       my $class = $opts->{class} || $args->{class} || "";
-      my $item_class = $opts->{item_class} || $args->{item_class} || "";
+      my $item_class = $opts->{item_class} || $args->{item_class} || "page-item";
 
       if ($class ne ""){
           $class = " " . $class;
@@ -53,7 +53,7 @@ sub  register{
       if( $actual == $start ){
         $html .= "<li class=\"disabled $item_class\"><a href=\"#\" >&laquo;</a></li>";
       } else {
-        $html .= "<li class=\"$item_class\"""><a href=\"" . $self->url_with->query( [$param => $actual - 1] ) . $query . "\" >&laquo;</a></li>";
+        $html .= "<li class=\"$item_class\"><a href=\"" . $self->url_with->query( [$param => $actual - 1] ) . $query . "\" >&laquo;</a></li>";
       }
       my $last_num = -1;
       foreach my $number( @ret ){
